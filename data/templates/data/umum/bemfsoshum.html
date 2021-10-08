@@ -1,0 +1,216 @@
+{% load static %}
+<!DOCTYPE html>
+<!--
+Template Name: Skaxis
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<link rel="shortcut icon" href="{% static 'tumum/images/demo/logobemfsoshum.png' %}">
+<title>{{ judul }}</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static '/tumum/css/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Top Background Image Wrapper -->
+<!-- awal navbar -->
+<div class="bgded overlay dark" style="background-image:url('static/tumum/images/demo/bemfsoshumbersamaputra.jpg');">
+    <!-- ##########################################################s###################################### -->
+    <div class="wrapper row1">
+      <header id="header" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <div id="logo" class="fl_left">
+          <a href="{% url 'bemfsoshum' %}">
+            <img style="margin-top: 6px; width: 60px;" id="logi" src="{% static 'tumum/images/demo/logobemfsoshum.png' %}">
+          </a>       
+        </div>
+        <nav id="mainav" class="fl_right">
+          <ul class="clear">
+            <li class="active"><a href="{% url 'data' %}">Beranda</a></li>
+            <li><a class="drop" href="#">BEM Fakultas</a>
+              <ul>
+                <li><a href="{% url 'bemft' %}">BEM Fakultas teknik</a></li>
+                <li><a href="{% url 'bemfai' %}">BEM Fakultas agama islam</a></li>
+                <li><a href="{% url 'bemfkes' %}">BEM Fakultas kesehatan</a></li>
+                <li><a href="{% url 'bemfsoshum' %}">BEM Fakultas sosial humaniora</a></li>
+              </ul>
+            </li>
+            <li><a class="drop" href="#">Info</a>
+              <ul>
+                <li><a href="{% url 'pusatberita' %}">berita</a></li>
+                <li><a class="drop" href="#">Profil</a>
+                  <ul>
+                    <li><a href="{% url 'profil_strukturbemu' %}">Struktural anggota</a></li>
+                    <li><a href="{% url 'tentang_aplikasi' %}">tentang aplikasi</a></li>
+                  </ul>
+                </li>
+                <li><a href="{% url 'galeri' %}">Galery</a></li>
+              </ul>
+            </li>
+            <li><a href="{% url 'kontak_bem' %}">Kontak</a></li>
+            <li><a class="nav-link {% if menu == 'login' %} active {% endif %}" href="{% url 'login' %}">Login</a></li>
+          </ul>
+        </nav>
+        <!-- ################################################################################################ -->
+      </header>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+
+
+<!-- akhir navbar -->
+<!-- End Top Background Image Wrapper -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- awal body -->
+<div id="pageintro" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="flexslider basicslider" >
+      <ul class="slides">
+        <li>
+            <article>
+                <p>Badan Eksekutif Mahasiswa</p>
+              <h3 class="heading">Fakultas sosial dan humaniora</h3>
+              <p>Universitas Nurul Jadid</p>
+                <footer><a class="btn btn inverse" href="{% url 'tentang_aplikasi' %}">About me</a></footer>
+                </footer>
+            </article>
+        </li>
+        <li>
+          <article>
+            <h3 class="heading">Visi</h3>
+            <p>Mewujudkan BEM Universitas nurul jadidi sebagai wadah mahasiswa untuk mengembangkan ilmu pengetahuan yang berwawasan kebangsaan serta berdasarkan trilogi dan panca kesadaran santri dalam meningkatkan kinerja organisasi.</p>
+            <footer><a class="btn btn inverse" href="{% url 'tentang_aplikasi' %}">About me</a></footer>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h3 class="heading">Misi</h3>
+            <p>
+              1.	Meningkatkan ketaqwaan Mahasiswa terhadap tuhan yang maha esa<br>
+              2.	Mengembangkan Mahasiswa yang berpotensi dalam minat dan bakat<br>
+              3.	Mempersiapkan mahasiswa dalam pemberdayaan masyarakat        <br>
+              4.	Membangun kesadaran mahasiswa untuk meningkatkan kualitas Kerjasama tim dalam organisasi<br>
+              </p>
+            <footer><a class="btn btn inverse" href="{% url 'tentang_aplikasi' %}">About me</a></footer>
+          </article>
+        </li>
+        <!-- <li>
+          <article>
+            <p>Phasellus</p>
+            <h3 class="heading">Bibendum blandit</h3>
+            <p>Lacus non tincidunt class aptent taciti sociosqu</p>
+            <footer><a class="btn inverse" href="#">Litora torquent</a></footer>
+          </article>
+        </li> -->
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </div>
+  <!-- ################################################################################################ -->
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row3">
+    <main class="hoc container clear"> 
+      <!-- main body -->
+      <!-- ################################################################################################ -->
+      <!-- ################################################################################################ -->
+      <hr class="btmspace-80">
+      <!-- ################################################################################################ -->
+      <ul class="nospace group overview">
+        {% for data in venues %}
+        <li class="one_third">
+          <article><a href="#"><img src="{{data.gambar.url}}" style="width: 350px; height: 200px;"></a>
+            <h6 class="heading">{{data.judul}}</h6>
+            <ul class="nospace meta">
+              <li><i class="fa fa-user"></i> <a href="#">{{data.id_Adminbem.nama_anggota}}</a></li>
+              <li><i class="fa fa-tag"></i> <a href="#">{{data.id_Adminbem.jenis_bem}}</a></li>
+              <li><i class="fa fa-tag"></i> <a href="#">{{data.date_created}}</a></li>
+            </ul>
+            <p style="text-align: justify;">{{data.deskripsi|safe}}</p>
+            <footer class="nospace"><a class="btn" href="{% url 'berita1' data.id %}">Baca Selengkapnya &raquo;</a></footer>
+          </article>
+        </li>
+        {% endfor %}
+      </ul>
+      
+      <!-- ################################################################################################ -->
+      <!-- / main body -->
+      <div class="clear"></div>
+    </main>
+  </div>
+<!-- akhir body -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper bgded overlay coloured" style="background-image:url('static/tumum/images/demo/bemfsoshumbersamaputri.jpg');">
+  <article class="hoc cta clear"> 
+    <!-- ################################################################################################ -->
+    <h6 class="three_quarter first">"Bekerja sama, mengabdi tanpa batas"</h6>
+    <footer class="one_quarter"><a class="btn btn inverse" href="{% static '/tumum/images/demo/bemfsoshumbersamaputri.jpg' %}">About me</a></footer>
+    <!-- ################################################################################################ -->
+  </article>
+</div>
+<div class="wrapper row4">
+  <footer id="footer" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="one_quarter first">
+      <h6 class="heading"></h6>
+      <ul class="nospace btmspace-30 linklist contact">
+        <li><i class="fa fa-map-marker"></i>
+          <address>
+            Kantor Sekret BEM-U Jln.KH Zaini mun'im karanganyar paiton probolinngo jawa timur
+          </address>
+        </li>
+      </ul>
+    </div>
+    <div class="one_quarter">
+      <h6 class="heading"></h6>
+      <ul class="nospace linklist">
+        <li><i class="fa fa-phone"></i>+62813-3553-0568</li>
+        <li><i class="fa fa-envelope-o"></i> bemunuja.ac.id</li>
+      </ul>
+    </div>
+    <div class="one_quarter">
+      <h6 class="heading"></h6>
+      <ul class="faico clear">
+        <li><a class="faicon-linkedin" href="https://www.instagram.com/bemfsoshum"><i class="fa fa-instagram"></i></a></li>
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2021 - WEB Badan Eksekutif mahasiswa - <a href="#">Universitas Nurul Jadid</a></p>
+    <p class="fl_right">Created by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">Admin.kumistipis</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="{% static 'tumum/js/jquery.min.js' %}"></script>
+<script src="{% static 'tumum/js/jquery.backtotop.js' %}"></script>
+<script src="{% static 'tumum/js/jquery.mobilemenu.js' %}"></script>
+<script src="{% static 'tumum/js/jquery.flexslider-min.js' %}"></script>
+</body>
+</html>

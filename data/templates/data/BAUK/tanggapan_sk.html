@@ -1,0 +1,51 @@
+{% extends "data/BAUK/base_BAUK.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="pcoded-content">
+    <!-- Page-header start -->
+    <div class="page-header">
+        <div class="page-block">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <ul class="breadcrumb">tem"><a href="#!">Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page-header end -->
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <!-- Project statustic start -->
+                        <div class="col-xl-7">
+                            <div class="card proj-progress-card">
+                                <div class="card-block">
+                                    <div class="">
+                                        <h4 style="text-align: center;">Form tanggapan SK {{tampil.id_Adminbem}} </h4>
+                                        <br>
+                                        <form action="" method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            {{pr.as_p}}
+                                            {{pr.media}}
+                                            <button class="btn btn-success waves-effect" type="submit">Simpan</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project statustic end -->
+                    </div>
+                </div>
+                <!-- Page-body end -->
+            </div>
+            <div id="styleSelector"> </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

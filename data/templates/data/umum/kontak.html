@@ -1,0 +1,31 @@
+{% extends "data/umum/main.html" %}
+{% load static %}
+{% block content %}
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <div class="content"> 
+      <div id="gallery">
+        <figure>
+          <header class="heading">kontak</header>
+          <table>
+            <tr>
+              <td>Kategory BEM</td>
+              <td>No Telepon</td>
+              <td>E-mail</td>
+            </tr>
+            {% for data in kontak %}
+            <tr>
+              <td>{{ data.jenis_bem }}</td>
+              <td>{{ data.telp_anggota }}</td>
+              <td>{{ data.Email }}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </figure>
+      </div>
+    </div>
+    <!-- / main body -->
+  </main>
+</div>
+{% endblock content %}

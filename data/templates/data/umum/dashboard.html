@@ -1,0 +1,96 @@
+{% extends "data/umum/main.html" %}
+{% load static %}
+{% block content %}
+<div id="pageintro" class="hoc clear"> 
+  <!-- ################################################################################################ -->
+  <div class="flexslider basicslider" >
+    <ul class="slides">
+      <li>
+        <article>
+          <p>Badan Eksekutif Mahasiswa</p>
+          <h3 class="heading">Universitas Nurul Jadid</h3>
+          <p>kabinet peradaban UNUJA 2020-2021</p>
+          <footer>
+            <form class="group" method="post" action="#">
+              <fieldset>
+                <legend>Sign-Up:</legend>
+                <footer><a class="btn btn inverse" href="{% url 'tentang_aplikasi' %}">Tentang</a></footer>
+              </fieldset>
+            </form>
+          </footer>
+        </article>
+      </li>
+      <li>
+        <article>
+          <h3 class="heading">Visi</h3>
+          <p>Mewujudkan BEM Universitas nurul jadidi sebagai wadah mahasiswa untuk mengembangkan ilmu pengetahuan yang berwawasan kebangsaan serta berdasarkan trilogi dan panca kesadaran santri dalam meningkatkan kinerja organisasi.</p>
+          <footer><a class="btn btn inverse" href="{% url 'tentang_aplikasi' %}">Tentang</a></footer>
+        </article>
+      </li>
+      <li>
+        <article>
+          <h3 class="heading">Misi</h3>
+          <p>
+            1.	Meningkatkan ketaqwaan Mahasiswa terhadap tuhan yang maha esa<br>
+            2.	Mengembangkan Mahasiswa yang berpotensi dalam minat dan bakat<br>
+            3.	Mempersiapkan mahasiswa dalam pemberdayaan masyarakat        <br>
+            4.	Membangun kesadaran mahasiswa untuk meningkatkan kualitas Kerjasama tim dalam organisasi<br>
+            </p>
+          <footer><a class="btn btn inverse" href="{% url 'tentang_aplikasi' %}">Tentang</a></footer>
+        </article>
+      </li>
+    </ul>
+  </div>
+  <!-- ################################################################################################ -->
+</div>
+<!-- ################################################################################################ -->
+</div>
+<div class="wrapper">
+  <div class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <figure id="introblocks">
+      <ul class="nospace group">
+        <li class="one_third first"><a href="{% url 'galeri' %}"><img src="{% static '/tumum/images/demo/p29.jpg' %}" alt=""></a></li>
+        <li class="one_third"><a href="{% url 'galeri' %}"><img src="{% static '/tumum/images/demo/p31.jpg' %}" alt=""></a></li>
+        <li class="one_third"><a href="{% url 'galeri' %}"><img src="{% static '/tumum/images/demo/pamflet4.jpg' %}" alt=""></a></li>
+      </ul>
+    </figure>
+    <p class="center"><a class="btn" href="{% url 'galeri' %}">Selengkapnya...</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="hoc container clear">
+        <iframe style="display:block; margin:auto;" width="980" height="635" src="https://www.youtube.com/embed/KnPyjkDamAM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- ################################################################################################ -->
+    <br>
+    <br>
+    <hr>
+    <!-- ################################################################################################ -->
+    <br>
+    <h4 class="center"><a class="btn">BERITA TERKINI</a></h4>
+    <br>
+    <ul class="nospace group overview">
+      {% for data in venues %}
+      <li class="one_third">
+        <article><a href="#"><img src="{{data.gambar.url}}" style="width: 350px; height: 200px;"></a>
+          <h6 class="heading">{{data.judul}}</h6>
+          <ul class="nospace meta">
+            <li><i class="fa fa-user"></i> <a href="#">{{data.id_Adminbem.nama_anggota}}</a></li>
+            <li><i class="fa fa-tag"></i> <a href="#">{{data.id_Adminbem.jenis_bem}}</a></li>
+          </ul>
+          <p style="text-align: justify;">{{data.deskripsi|safe}}</p>
+          <footer class="nospace"><a class="btn" href="{% url 'berita1' data.id %}">Baca Selengkapnya &raquo;</a></footer>
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+{% endblock content %}

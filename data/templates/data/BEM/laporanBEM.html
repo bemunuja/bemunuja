@@ -1,0 +1,88 @@
+{% extends "data/BEM/base_BEM.html" %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="pcoded-content">
+    <!-- Page-header start -->
+    <div class="page-header">
+        <div class="page-block">
+        </div>
+    </div>
+    <!-- Page-header end -->
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <!-- Project statustic start -->
+                        <div class="col-xl-12">
+                            <div class="card proj-progress-card">
+                                        <div class="page-body">
+                                            <!-- Basic table card start -->
+                                            <div class="card">
+                                                <div class="card-block table-border-style">
+                                                    <form method="get">
+                                                        <div class="row">
+                                                            <a role="button" href="{% url 'tambah_laporanbem' %}" style="margin-left: 2pc;" type="button" class="btn btn-success waves-effect" data-toggle="tooltip" data-placement="right" title="tambah data proposal">
+                                                                Tambah Data
+                                                            </a>
+                                                        </div>
+                                                        <br>
+                                                    </form>
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr class="bg-primary" style="text-align: center;">
+                                                                    <th><p>NO</p></th>
+                                                                    <th><p>KEGIATAN</p></th>
+                                                                    <th><p>KETERANGAN</p></th>
+                                                                    <th><p>STATUS</p></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {% for data in laporan %}
+                                                                <tr style="text-align: center;">
+                                                                    <th><p>{{forloop.counter}}</p></th>
+                                                                    <td><p>{{data.id_proker}}</p></td>
+                                                                    <td><h6>{{data.tanggapan_laporan}}</h6></td>
+                                                                    <td>
+                                                                        <a class="btn btn-info waves-effect waves-light" href="{% url 'status_laporanbem' data.id %}" role="button" title="cek status pengajuan proposal">cek status</a>
+                                                                    </td>                                                                     
+                                                                </tr>
+                                                                {% endfor %}  
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Basic table card end -->
+                                            <!-- Inverse table card start -->
+                                            
+                                            <!-- Inverse table card end -->
+                                            <!-- Hover table card start -->
+                                            
+                                            <!-- Hover table card end -->
+                                            <!-- Contextual classes table starts -->
+                                            
+                                            <!-- Contextual classes table ends -->
+                                            <!-- Background Utilities table start -->
+                                            <div class="card">
+                                                
+                                                
+                                            </div>
+                                            <!-- Background Utilities table end -->
+                                        </div>
+                                        <!-- Page-body end -->
+                            </div>
+                        </div>
+                        <!-- Project statustic end -->
+                    </div>
+                </div>
+                <!-- Page-body end -->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

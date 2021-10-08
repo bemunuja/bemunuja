@@ -1,0 +1,117 @@
+{% extends "data/BAUK/base_BAUK.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="pcoded-content">
+    <!-- Page-header start -->
+    <div class="page-header">
+        <div class="page-block">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index.html"> <i class="fa fa-home"></i> </a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="#!">Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page-header end -->
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <!-- Project statustic start -->
+                        <div class="col-xl-11">
+                            <div class="card proj-progress-card">
+                                <div class="card-block">
+                                    <div class="">
+                                        <h4 style="text-align: center;">
+                                            <a href="{{tampil.id_Adminbem.foto_profil.url}}"><img src="{{tampil.id_Adminbem.foto_profil.url}}" style="width: 100px;"></a>
+                                        </h4>
+                                        <h4 style="text-align: center;">
+                                            Data kegiatan {{ tampil.id_proker }}
+                                        </h4>
+                                        <br>
+                                        <table class="table">
+                                            <head>
+                                                <tr>
+                                                    <th><h6>Nama Menteri/devisi</h6></th>
+                                                    <th>: {{ tampil.id_proker.devisi }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <th><h6>Nama kegiatan</h6></th>
+                                                    <th>: {{ tampil.id_proker.nama_kegiatan }}</th>
+                                                </tr>
+                                                    <th><h6>Waktu kegiatan</h6></th>
+                                                    <th>: {{ tampil.id_proker.waktu_kegiatan }}</th>
+                                                </tr>
+                                                    <th><h6>Status</h6></th>
+                                                    <th><h5>{{ tampil.id_proker.tanggapan_proker}}</h5></th>
+                                                </tr>
+                                                <tr>
+                                                    <th><h6>Status Anggaran</h6></th>
+                                                    <th><h5>{{ tampil.id_proker.pencairan_proker}}</h5></th>
+                                                </tr>
+                                            </head>
+                                        </table>
+                                        <br>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-11">
+                            <div class="card proj-progress-card">
+                                <div class="card-block">
+                                    <div class="">
+                                        <h4 style="text-align: center;">
+                                            Data Laporan Kegiatan {{ tampil.id_proker.nama_kegiatan }}
+                                        </h4>
+                                        <br>
+                                        <br>
+                                        <table class="table">
+                                            <head>
+                                                <tr>
+                                                    <th><h6>File LPJ</h6></th>
+                                                    <th>: <a href="{{tampil.file.url}}"><code>lihat dokumen</code></a></th>
+                                                </tr>
+                                                <tr>
+                                                    <th><h6>Dokumentasi kegiatan</h6></th>
+                                                    <th>: Berita dengan judul <a href="{% url 'pusatberita' %}"><code>"{{tampil.id_berita.judul}}"</code></a></th>
+                                                </tr>
+                                                <tr>
+                                                    <th><h6>Dana Kegiatan</h6></th>
+                                                    <th>: {{ tampil.anggaran_dana|safe }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <th><h6>Status</h6></th>
+                                                    <th><h5>{{ tampil.tanggapan_laporan}}</h5></th>
+                                                </tr>
+                                                <tr>
+                                                    <th><h6>Catatan</h6></th>
+                                                    <th>: {{ tampil.catatan }}</th>
+                                                </tr>
+                                            </head>
+                                        </table>
+                                        <br>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project statustic end -->
+                    </div>
+                </div>
+                <!-- Page-body end -->
+            </div>
+            <div id="styleSelector"> </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

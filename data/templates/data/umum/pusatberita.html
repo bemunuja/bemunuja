@@ -1,0 +1,44 @@
+{% extends "data/umum/main.html" %}
+{% load static %}
+{% block content %}
+<div class="wrapper row3">
+  <main class="hoc container clear">
+  <br>
+  <h4 class="center"><a class="btn">PUSAT BERITA</a></h4>
+  <br>
+    <ul class="nospace group overview">
+      {% for data in venues %}
+      <li class="one_third">
+        <article><a href="{{data.gambar.url}}"><img src="{{data.gambar.url}}" style="width: 350px; height: 200px;"></a>
+          <h6 class="heading">{{data.judul}}</h6>
+          <ul class="nospace meta">
+            <li><i class="fa fa-user"></i> <a href="#">{{data.id_Adminbem.jenis_bem}}</a></li>
+            <li><i class="fa fa-tag"></i> <a href="#">{{data.date_created}}</a></li>
+          </ul>
+          <p style="text-align: justify;">{{data.deskripsi|safe}}</p>
+          <footer class="nospace"><a class="btn" href="{% url 'berita1' data.id %}">Baca Selengkapnya &raquo;</a></footer>
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+    <div class="clear"></div>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <nav class="pagination">
+      <ul>
+        {% if venues.has_previous %}
+          <li><a class="btn btn inverse" href="?page={{ venues.previous_page_number }}">&laquo; kembali</a></li>
+          <li><strong>&hellip;</strong></li>
+        {% endif %}
+        <li class="current"><strong>{{ venues.number }}</strong></li>
+        {% if venues.has_next %}
+          <li><strong>&hellip;</strong></li>
+          <li><a class="btn btn inverse" href="?page={{ venues.next_page_number }}">selanjutnya &raquo;</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </main>
+</div>
+{% endblock content %}

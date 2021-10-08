@@ -1,0 +1,123 @@
+{% extends "data/BEM/base_BEM.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="pcoded-content">
+    <!-- Page-header start -->
+    <div class="page-header">
+        <div class="page-block">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index.html"> <i class="fa fa-home"></i> </a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="#!">Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page-header end -->
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <!-- Project statustic start -->
+                        <div class="col-xl-11">
+                            <div class="card proj-progress-card">
+                                <div class="card-block">
+                                    <h4 style="text-align: center;">
+                                        <a href="{{tampil.id_Adminbem.foto_profil.url}}"><img src="{{tampil.id_Adminbem.foto_profil.url}}" style="width: 100px;"></a>
+                                    </h4>
+                                    <h4 style="text-align: center;">
+                                            Status pengajuan Kegiatan "{{ tampil.id_Adminbem }}"
+                                        </h4>
+                                    <br>
+                                    <table class="table">
+                                        <head>
+                                            <tr>
+                                                <th><h6>Nama Menteri/devisi</h6></th>
+                                                <th>: {{ tampil.devisi }}</th>
+                                            </tr>
+                                            <tr>
+                                                <th><h6>Nama kegiatan</h6></th>
+                                                <th>: {{ tampil.nama_kegiatan }}</th>
+                                            </tr>
+                                            <tr>
+                                                <th><h6>Tujuan kegiatan</h6></th>
+                                                <th>: {{ tampil.tujuan_kegiatan }}</th>
+                                            </tr>
+                                            <tr>
+                                                <th><h6>Target kegiatan</h6></th>
+                                                <th>: {{ tampil.target_kegiatan }}</th>
+                                            </tr>
+                                            <tr>
+                                                <th><h6>Waktu kegiatan</h6></th>
+                                                <th>: {{ tampil.waktu_kegiatan }}</th>
+                                            </tr>
+                                            <tr>
+                                                <th><h6>Sifat kegiatan</h6></th>
+                                                <th>: {{ tampil.sifat_kegiatan }}</th>
+                                            </tr>
+                                            <tr>
+                                                <th><h6>Struktur kepanitiaan</h6></th>
+                                                <th>: <a href="{{tampil.struktur_kepanitiaan.url}}"><code>lihat dokumen</code></a></th>
+                                            </tr>
+                                            <tr>
+                                                <th><h6>File proposal</h6></th>
+                                                <th>: <a href="{{ tampil.proposal_kegiatan.url }}"><code>lihat dokumen</code></a></th>
+                                            </tr>
+                                            <tr>
+                                                <th><h6>Rencana anggaran</h6></th>
+                                                <th>: Rp. {{ tampil.ringkasan_anggaran|safe }}</th>
+                                            </tr>
+                                        </head>
+                                    </table>
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs  tabs" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-toggle="tab" href="#home1" role="tab">Keputusan</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#profile1" role="tab">Keuangan</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#messages1" role="tab">Catatan</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#settings1" role="tab">Penerbitan SK</a>
+                                                </li>
+                                            </ul>
+                                            <!-- Tab panes -->
+                                            <div class="tab-content tabs card-block">
+                                                <div class="tab-pane active" id="home1">
+                                                    <p><h4>"{{ tampil.tanggapan_proker }}"</h4></p>
+                                                </div>
+                                                <div class="tab-pane" id="profile1">
+                                                    <p><h4>{{ tampil.pencairan_proker }}</h4></p>
+                                                </div>
+                                                <div class="tab-pane" id="messages1">
+                                                    <p><h6>{{ tampil.catatan }}</h6></p>
+                                                </div>
+                                                <div class="tab-pane" id="settings1">
+                                                    <p><code><a href="{{tampil.terbitan_sk.url}}"><code>Download terbitan SK</code></a></p>
+                                                </div>
+                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project statustic end -->
+                    </div>
+                </div>
+                
+                <!-- Page-body end -->
+            </div>
+            <div id="styleSelector"> </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

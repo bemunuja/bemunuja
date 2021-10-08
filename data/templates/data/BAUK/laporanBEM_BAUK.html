@@ -1,0 +1,115 @@
+{% extends "data/BAUK/base_BAUK.html" %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="pcoded-content">
+    <!-- Page-header start -->
+    <div class="page-header">
+        <div class="page-block">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                </div>
+                <div class="col-md-4">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">
+
+                        </li>
+                        
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page-header end -->
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <!-- Project statustic start -->
+                        <div class="col-xl-12">
+                            <div class="card proj-progress-card">
+                                <div class="">
+                                    <div class="">
+                                        <!-- Page-body start -->
+                                        <div class="page-body">
+                                            <!-- Tooltips on textbox card start -->
+                                        </div>
+                                        <div class="page-body">
+                                            <!-- Basic table card start -->
+                                            <div class="card">
+                                                <div class="card-block table-border-style">
+                                                    <form method="get">
+                                                        <div class="row">
+                                                            <a role="button" href="{% url 'cetaklaporan' %}" style="margin-left: 2pc;" type="button" class="btn waves-effect waves-light btn-inverse btn-outline-inverse" data-toggle="tooltip" data-placement="right" title="cetak ke bentuk exel">
+                                                                cetak
+                                                            </a>
+                                                        </div>
+                                                        <br>
+                                                    </form>
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr class="bg-primary" style="text-align: center;">
+                                                                    <th><p>No</p></th>
+                                                                    <th><p>KEGIATAN</p></th>
+                                                                    <th><p>status</p></th>
+                                                                    <th><p>Detail</p></th>
+                                                                    <th><p>tanggapan</p></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {% for data in laporan %}
+                                                                <tr style="text-align: center;">
+                                                                    <th><p>{{forloop.counter}}</p></th>
+                                                                    <td><p>{{data.id_proker}}</p></td>
+                                                                    <td><h6>{{data.tanggapan_laporan}}</h6></td>
+                                                                    <td>
+                                                                        <a class="btn btn-info waves-effect" href="{% url 'detaillaporan_bauk' data.id %}" role="button" title="berikan tanggapan">Detail</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a class="btn btn-success waves-effect" href="{% url 'tanggapanlaporan_bauk' data.id %}" role="button" title="berikan tanggapan">tanggapi</a>
+                                                                    </td>                                                        
+                                                                </tr>
+                                                                {% endfor %}  
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Basic table card end -->
+                                            <!-- Inverse table card start -->
+                                            
+                                            <!-- Inverse table card end -->
+                                            <!-- Hover table card start -->
+                                            
+                                            <!-- Hover table card end -->
+                                            <!-- Contextual classes table starts -->
+                                            
+                                            <!-- Contextual classes table ends -->
+                                            <!-- Background Utilities table start -->
+                                            <div class="card">
+                                                
+                                                
+                                            </div>
+                                            <!-- Background Utilities table end -->
+                                        </div>
+                                        <!-- Page-body end -->
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project statustic end -->
+                    </div>
+                </div>
+                <!-- Page-body end -->
+            </div>
+            <div id="styleSelector"> </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

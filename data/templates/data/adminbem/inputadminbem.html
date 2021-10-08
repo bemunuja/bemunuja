@@ -1,0 +1,84 @@
+{% extends "data/BAUK/base_BAUK.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="pcoded-content">
+    <!-- Page-header start -->
+    <div class="page-header">
+        <div class="page-block">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                </div>
+                <div class="col-md-4">
+                    <ul class="breadcrumb">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page-header end -->
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <!-- Project statustic start -->
+                        <div class="col-xl-7">
+                            <div class="card proj-progress-card">
+                                {% if messages %}
+                                    {% for pesan  in messages  %}
+                                        <div class="alert alert-{{ pesan.tags }}" align="center">
+                                            <b>{{ pesan }}</b>
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                                <div class="card-block">
+                                    <div class="">
+                                        <h4 style="text-align: center;">tambah user BEM</h4>
+                                        <br>
+                                        <form action="" method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            {{form.as_p}}
+                                            {{form.media}}
+                                            <div class="form-group mt-3">
+                                                <label>Username: </label>
+                                                <input type="text" class="form-control" name="username" id="date-mask"
+                                                    placeholder="Username">
+                                            </div>
+            
+                                             <div class="form-group mt-3">
+                                                <label>Password: </label>
+                                                <input type="password" class="form-control" name="password" id="date-mask"
+                                                    placeholder="Password">
+                                            </div>
+            
+                                             <div class="form-group mt-3">
+                                                <label>Ulangi Password: </label>
+                                                <input type="password" class="form-control" name="password2" id="date-mask"
+                                                    placeholder="Password">
+                                            </div>
+            
+                                             <div class="border-top">
+                                                <div class="card-body">
+                                                    <button type="submit" class="btn btn-success">SIMPAN</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project statustic end -->
+                    </div>
+                </div>
+                <!-- Basic Form Inputs card start -->
+                <!-- Basic Form Inputs card end -->
+            </div>
+                <!-- Page-body end -->
+            </div>
+            <div id="styleSelector"> </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

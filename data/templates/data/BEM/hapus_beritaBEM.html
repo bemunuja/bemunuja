@@ -1,0 +1,25 @@
+{% extends "data/BEM/base_BEM.html" %} 
+{% block content %}
+<div class="pcoded-content">
+    <!-- Page-header start -->
+    <div class="page-header">
+        <div class="page-block">
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-md-8">
+                <div class="card card-body">
+                    <p> Apakah anda yakin ingin menghapus berita dengan judul "{{databeritadelete.judul}}" ?</p>
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <br>
+                            <a class="btn btn-danger" href="{% url 'berita_bem' %}" role="button">Cancel</a>
+                            <input type="submit" class="btn btn-success" name="Confirm"/>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

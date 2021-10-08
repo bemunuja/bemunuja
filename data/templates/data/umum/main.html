@@ -1,0 +1,115 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<!--
+Template Name: Skaxis
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<link rel="shortcut icon" href="{% static 'tumum/images/demo/logo.png' %}">
+<title>{{ judul }}</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static '/tumum/css/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- Top Background Image Wrapper -->
+<!-- awal navbar -->
+  {% include "data/umum/navbar.html" %}
+
+
+<!-- akhir navbar -->
+<!-- End Top Background Image Wrapper -->
+<!-- awal body -->
+{% block content %}
+
+{% endblock content %}
+<!-- akhir body -->
+<div class="wrapper bgded overlay coloured" style="background-image:url('static/tumum/images/demo/ok.jpg');">
+  <article class="hoc cta clear"> 
+    <h6 class="three_quarter first">"Bekerja sama, mengabdi tanpa batas"</h6>
+    <footer class="one_quarter"><a class="btn btn inverse" href="{% static '/tumum/images/demo/ok.jpg' %}">tentang</a></footer>
+
+  </article>
+</div>
+<div class="wrapper row4">
+  <footer id="footer" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="one_quarter first">
+      <ul class="nospace btmspace-30 linklist contact">
+        <li><i class="fa fa-map-marker"></i>
+          <address>
+            Sekretariat BEM-U Jln.KH Zaini mun'im karanganyar paiton probolinngo jawa timur
+          </address>
+        </li>
+        <li><i class="fa fa-phone"></i> (+62)813-3553-0568</li>
+        <li><i class="fa fa-envelope-o"></i> Bemunuja@gmail.com</li>
+      </ul>
+      <ul class="faico clear">
+        <li><a class="faicon-facebook" href="https://www.instagram.com/bemunuja/?hl=id"><i class="fa fa-instagram"></i></a></li>
+        <li><a class="faicon-twitter" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="faicon-twitter" href="https://www.youtube.com/"><i class="fa fa-youtube"></i></a></li>
+        <li><a class="faicon-dribble" href="https://id-id.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="faicon-dribble" href="https://www.whatsapp.com/?lang=id"><i class="fa fa-whatsapp"></i></a></li>
+      </ul>
+    </div>
+    <div class="one_quarter">
+      <ul class="nospace linklist" style="text-align: center">
+        <li>خمس وعي تلاميذ</li>
+        <li><a href="#">اَلْوَعْيُ الدِّيْنِيْ</a></li>
+        <li><a href="#">اَلْوَعْيُ الْعِلْمِيْ</a></li>
+        <li><a href="#">اَلْوَعْيُ اْلاِجْتِمَاعِيْ</a></li>
+        <li><a href="#">اَلْوَعْيُ الْحُكُوْمِيْ وَالشُّعِْبيْ</a></li>
+        <li><a href="#">اَلْوَعْيُ النِّظَامِيْ</a></li>
+      </ul>
+    </div>
+    <div class="one_quarter">
+      <ul class="nospace linklist" style="text-align: center">
+        <li>Panca kesadaran santri</li>
+        <li><a href="#">Kesadaran Beragama</a></li>
+        <li><a href="#">Kesadaran Berilmu</a></li>
+        <li><a href="#">Kesadaran Bermasyarakat</a></li>
+        <li><a href="#">Kesadaran Berbangsa dan Bernegara</a></li>
+        <li><a href="#">Kesadaran Berorganisasi</a></li>
+      </ul>
+    </div>
+    <div class="one_quarter" style="text-align: justify">
+      <p class="nospace btmspace-15">Sampaikan Pertanyaan, Aspirasi, Kritikan dan masukanmu di bawah sini, demi kebaikan BEM dan Kampus UNUJA kita tercinta.</p>
+      <form method="post" action="#">
+        <fieldset>
+          <legend>Newsletter:</legend>
+          <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <a class="btmspace-15 type="text" value="" placeholder="">{{pr.identitas}}</a>
+            <br>
+            <a class="btmspace-15 type="text" value="" placeholder="">{{pr.komentar}}</a>
+            <br>
+            <button type="submit">
+              kirim
+            </button>
+          </form>
+        </fieldset>
+      </form>
+    </div>
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear">
+    <p class="fl_left">Copyright &copy; 2021 - WEB BEM - <a href="https://www.unuja.ac.id/">Universitas Nurul Jadid</a></p>
+    <p class="fl_right">Created by <a target="_blank" href="https://www.instagram.com/admin.kumistipis" title="Free Website Templates">Admin.kumistipis</a></p>
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="{% static 'tumum/js/jquery.min.js' %}"></script>
+<script src="{% static 'tumum/js/jquery.backtotop.js' %}"></script>
+<script src="{% static 'tumum/js/jquery.mobilemenu.js' %}"></script>
+<script src="{% static 'tumum/js/jquery.flexslider-min.js' %}"></script>
+</body>
+</html>

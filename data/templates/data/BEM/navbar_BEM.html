@@ -1,0 +1,73 @@
+{% load static %}
+<nav class="pcoded-navbar">
+    <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+    <div class="pcoded-inner-navbar main-menu">
+        <div class="">
+            <div class="main-menu-header">
+                <img class="img-50 img-radius" style="width: 25px;" src="{% static 'tumum/images/demo/logobemfsoshum.png' %}" alt="User-Profile-Image">
+                <img class="img-50 img-radius" style="width: 35px;" src="{% static 'tumum/images/demo/logobemfai.png' %}" alt="User-Profile-Image">
+                <img class="img-50 img-radius" style="width: 60px;" src="{% static 'tumum/images/demo/logo.png' %}" alt="User-Profile-Image">
+                <img class="img-50 img-radius" style="width: 30px;" src="{% static 'tumum/images/demo/logobemft.png' %}" alt="User-Profile-Image">
+                <img class="img-50 img-radius" style="width: 31px;" src="{% static 'tumum/images/demo/logobemfkes.png' %}" alt="User-Profile-Image">
+                <div class="user-details">
+                    <span id="more-details">BEM ({{ request.user }})<i class=""></i></span>
+                </div>
+            </div>
+        </div>
+        <ul class="pcoded-item pcoded-left-item">
+            <li class="active">
+                <a href="{% url 'user-page' %}" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                    <span class="pcoded-mtext">Dashboard</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
+        <div class="pcoded-navigation-label" style="text-align: center;">pengajuan</div>
+        <ul class="pcoded-item pcoded-left-item">
+            <li class="pcoded-hasmenu">
+                <a href="{% url 'skBEM_BEM' %}" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-layers"></i><b>BC</b></span>
+                    <span class="pcoded-mtext">Surat keputusan</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+            <li class="pcoded-hasmenu">
+                <a href="{% url 'proker_BEM' %}" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-layers"></i><b>BC</b></span>
+                    <span class="pcoded-mtext">Kegiatan</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+            <li class="pcoded-hasmenu">
+                <a href="{% url 'laporan_bem' %}" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-layers"></i><b>BC</b></span>
+                    <span class="pcoded-mtext">laporan kegiatan</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+            <div class="pcoded-navigation-label" style="text-align: center;">berita</div>
+            <li class="pcoded-hasmenu">
+                <a href="{% url 'adminberita' %}" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-layers"></i><b>BC</b></span>
+                    <span class="pcoded-mtext">kelola berita</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+            <li class="pcoded-hasmenu">
+                <a href="{% url 'form_coba' %}" class="waves-effect waves-dark">
+                    <span class="pcoded-micon"><i class="ti-layers"></i><b>BC</b></span>
+                    <span class="pcoded-mtext">kelola Galeri</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+            <li class="pcoded-navigation-label">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}"" class="waves-effect waves-light" style="text-align: center;">
+                        <span>Log out</span>
+                        <i class="ti-layout-sidebar-left"></i>
+                    </a>
+                {% endif %}
+            </li>
+    </div>
+</nav>

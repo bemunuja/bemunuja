@@ -1,0 +1,56 @@
+{% load static %}
+<div class="bgded overlay dark" style="background-image:url('static/tumum/images/demo/bemkumpul.jpg');">
+  <!-- ##########################################################s###################################### -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <a href="{% url 'data' %}">
+          <img style="margin-top: -1px;" id="logi" src="{% static 'tumum/images/demo/logo.png' %}">
+          <img style="margin-top: -1px; width: 70px;" id="logi" src="{% static 'tumum/images/demo/logokabinet.png' %}">
+        </a>       
+      </div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li class="active"><a href="{% url 'data' %}">Beranda</a></li>
+          <li><a class="drop" href="#">BEM Fakultas</a>
+            <ul>
+              <li><a href="{% url 'bemft' %}">BEM Fakultas teknik</a></li>
+              <li><a href="{% url 'bemfai' %}">BEM Fakultas agama islam</a></li>
+              <li><a href="{% url 'bemfkes' %}">BEM Fakultas kesehatan</a></li>
+              <li><a href="{% url 'bemfsoshum' %}">BEM Fakultas sosial humaniora</a></li>
+            </ul>
+          </li>
+          <li><a class="drop" href="#">Info</a>
+            <ul>
+              <li><a href="{% url 'pusatberita' %}">Berita</a></li>
+              <li><a class="drop" href="#">Profil</a>
+                <ul>
+                  <li><a href="{% url 'profil_strukturbemu' %}">Struktural anggota</a></li>
+                  <li><a href="{% url 'tentang_aplikasi' %}">tentang aplikasi</a></li>
+                </ul>
+              </li>
+              <li><a href="{% url 'galeri' %}">Galery</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Download</a></li>
+          <li><a href="{% url 'kontak_bem' %}">Kontak</a></li>
+          <li><a class="nav-link {% if menu == 'login' %} active {% endif %}" href="{% url 'login' %}">Login</a></li>
+          
+        </ul>
+      </nav>
+      <!-- ################################################################################################ -->
+    </header>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  
+
+
+
+
+
+
+    
+  

@@ -1,0 +1,70 @@
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<head>
+    <title>Form Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="keywords" content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+    <meta name="author" content="Codedthemes" />
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="{% static 'tumum/images/demo/logo.png' %}">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <!-- waves.css -->
+    <link rel="stylesheet" href="{% static 'tadmin/pages/waves/css/waves.min.css' %}" type="text/css" media="all">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="{% static 'tadmin/css/bootstrap/css/bootstrap.min.css' %}">
+    <!-- waves.css -->
+    <link rel="stylesheet" href="{% static 'tadmin/pages/waves/css/waves.min.css' %}" type="text/css" media="all">
+    <!-- themify icon -->
+    <link rel="stylesheet" type="text/css" href="{% static 'tadmin/icon/themify-icons/themify-icons.css' %}">
+    <!-- font-awesome-n -->
+    <link rel="stylesheet" type="text/css" href="{% static 'tadmin/css/font-awesome-n.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'tadmin/css/font-awesome.min.css' %}">
+    <!-- scrollbar.css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'tadmin/css/jquery.mCustomScrollbar.css' %}">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'tadmin/css/style.css' %}">
+</head>
+<body themebg-pattern="theme1">
+    <div class="loader-track">
+        <form class="md-float-material form-material">
+            <div class="text-center">
+                <br>
+                <img src="{% static 'tumum/images/demo/logobemfsoshum.png' %}" alt="logo.png" width="62px">
+                <img src="{% static 'tumum/images/demo/logobemfai.png' %}" alt="logo.png" width="70px">
+                <img src="{% static 'tumum/images/demo/logo.png' %}" alt="logo.png" width="110px">
+                <img src="{% static 'tumum/images/demo/logobemft.png' %}" alt="logo.png" width="58px">
+                <img src="{% static 'tumum/images/demo/logobemfkes.png' %}" alt="logo.png" width="76px">
+            </div>
+        </form>
+        <section class="login-block">
+            <div class="auth-box card">
+                <div class="row justify-content-md-center">
+                    <div class="col-md">
+                        <div class="card card-body">
+                            {% if messages %} 
+                                {% for pesan in messages %}
+                                    <div class="alert alert-{{ pesan.tags }}" align="center"><b>{{ pesan }}</b></div>
+                                {% endfor %} 
+                            {% endif %}
+                            <h3 align="center">LOGIN</h3>
+                            <form action="" method="POST">
+                                {% csrf_token %} 
+                                {{ tampillogin|crispy }} 
+                                <br>
+                                <input type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20"y" name="Save" value="Login"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+</body>
+
+{% endblock content %}

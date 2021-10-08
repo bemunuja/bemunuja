@@ -1,0 +1,45 @@
+{% extends "data/umum/main.html" %}
+{% load static %}
+{% block content %}
+<div id="breadcrumb" class="hoc clear" >
+  <div id="mainav">
+    <ul>
+      <li><a href="{% url 'data' %}">Home</a></li>
+      <li><a href="{% url 'pusatberita' %}">Berita</a></li>
+      <li><a href="#" style="color: aliceblue;">{{pr.judul}}</a></li>
+    </ul>
+  </div>
+</div>
+</div>
+<div class="wrapper row3">
+  <!-- main body -->
+  <main class="hoc container clear">
+    <div class="content three_quarter first">
+      <h6 class="heading">{{pr.judul}}</h6>
+      <br>
+      <a href="{{pr.gambar.url}}"><img src="{{pr.gambar.url}}" style="width: auto;"></a>
+      <table>
+        <tr>
+          <td style="text-align: justify;">{{pr.isi|safe}}}</td>
+        </tr>
+      </table>
+      {{ form.berita }}
+    </div>
+<!-- berita terbaru bagian kanan -->
+
+    <div class="sidebar one_quarter">
+      <div class="sdb_holder">
+        <h6>About me</h6>
+        <address>
+        {{pr.id_Adminbem.jenis_bem}}<br>
+        terunggah pada <a href="">{{pr.date_created}}</a>
+        Tel: <a href="{% url 'kontak_bem' %}">{{pr.id_Adminbem.telp_anggota}}</a><br>
+        Email: <a href="{% url 'kontak_bem' %}">{{pr.id_Adminbem.Email}}</a>
+        </address>
+      </div>
+    </div>
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+{% endblock content %}

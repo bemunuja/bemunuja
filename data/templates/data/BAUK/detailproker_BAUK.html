@@ -1,0 +1,184 @@
+{% extends "data/BAUK/base_BAUK.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="pcoded-content">
+    <!-- Page-header start -->
+    <div class="page-header">
+        <div class="page-block">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <ul class="breadcrumb">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page-header end -->
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <!-- Project statustic start -->
+                        <div class="col-xl-11">
+                            <div class="card proj-progress-card">
+                                <div class="card-block">
+                                    <div class="">
+                                        <h4 style="text-align: center;">
+                                            <a href="{{tampil.id_Adminbem.foto_profil.url}}"><img src="{{tampil.id_Adminbem.foto_profil.url}}" style="width: 100px;"></a>
+                                        </h4>
+                                        <h4 style="text-align: center;">
+                                            Data pengajuan kegiatan "{{ tampil.id_Adminbem }}
+                                        </h4>
+                                        <br>
+                                        <table class="table">
+                                            <head>
+                                                <tr>
+                                                    <th><h6>Nama Menteri/devisi</h6></th>
+                                                    <th>: {{ tampil.devisi }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <th><h6>Nama kegiatan</h6></th>
+                                                    <th>: {{ tampil.nama_kegiatan }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <th><h6>Tujuan kegiatan</h6></th>
+                                                    <th>: {{ tampil.tujuan_kegiatan }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <th><h6>Target kegiatan</h6></th>
+                                                    <th>: {{ tampil.target_kegiatan }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <th><h6>Waktu kegiatan</h6></th>
+                                                    <th>: {{ tampil.waktu_kegiatan }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <th><h6>Sifat kegiatan</h6></th>
+                                                    <th>: {{ tampil.sifat_kegiatan }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <th><h6>Struktur kepanitiaan</h6></th>
+                                                    <th>: <a href="{{tampil.struktur_kepanitiaan.url}}"><code>lihat dokumen</code></a></th>
+                                                </tr>
+                                                <tr>
+                                                    <th><h6>File proposal</h6></th>
+                                                    <th>: <a href="{{ tampil.proposal_kegiatan.url }}"><code>lihat dokumen</code></a></th>
+                                                </tr>
+                                                <tr>
+                                                    <th><h6>Rencana anggaran</h6></th>
+                                                    <th>: Rp.{{ tampil.ringkasan_anggaran|safe }}</th>
+                                                </tr>
+                                            </head>
+                                        </table>
+                                        <br>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-12">
+                            <div class="card mat-stat-card">
+                                <div class="card-block">
+                                    <div class="row align-items-center b-b-default">
+                                        <div class="col-sm-6 b-r-default p-b-20 p-t-20">
+                                            <div class="row align-items-center text-center">
+                                                <div class="col-4 p-r-0">
+                                                    <i class="far fa-user text-c-purple f-24"></i>
+                                                </div>
+                                                <div class="col-8 p-l-0">
+                                                    <h5>User</h5>
+                                                    <p class="text-muted m-b-0" style="font-size: 12px;">{{ tampil.id_Adminbem }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 p-b-20 p-t-20">
+                                            <div class="row align-items-center text-center">
+                                                <div class="col-4 p-r-0">
+                                                    <i class="fas fa-volume-down text-c-green f-24"></i>
+                                                </div>
+                                                <div class="col-8 p-l-0">
+                                                    <h5>phone</h5>
+                                                    <p class="text-muted m-b-0" style="font-size: 12px;">{{ tampil.id_Adminbem.telp_anggota }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-6 p-b-20 p-t-20 b-r-default">
+                                            <div class="row align-items-center text-center">
+                                                <div class="col-4 p-r-0">
+                                                    <i class="far fa-file-alt text-c-red f-24"></i>
+                                                </div>
+                                                <div class="col-8 p-l-0">
+                                                    <h5>No Rek</h5>
+                                                    <p class="text-muted m-b-0" style="font-size: 12px;">{{ tampil.id_Adminbem.no_rekening }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 p-b-20 p-t-20">
+                                            <div class="row align-items-center text-center">
+                                                <div class="col-4 p-r-0">
+                                                    <i class="far fa-envelope-open text-c-blue f-24"></i>
+                                                </div>
+                                                <div class="col-8 p-l-0">
+                                                    <h5>Mails</h5>
+                                                    <p class="text-muted m-b-0" style="font-size: 12px;">{{ tampil.id_Adminbem.Email }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-7">
+                            <div class="card proj-progress-card">
+                                <div class="card-block">
+                                    <h4 style="text-align: center;">Status pengajuan</h4>
+                                    <br>
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs  tabs" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-toggle="tab" href="#home1" role="tab">Keputusan</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#profile1" role="tab">Keuangan</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#messages1" role="tab">Catatan</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#settings1" role="tab">Penerbitan SK</a>
+                                                </li>
+                                            </ul>
+                                            <!-- Tab panes -->
+                                            <div class="tab-content tabs card-block">
+                                                <div class="tab-pane active" id="home1">
+                                                    <p><h4>"{{ tampil.tanggapan_proker }}"</h4></p>
+                                                </div>
+                                                <div class="tab-pane" id="profile1">
+                                                    <p><h4>{{ tampil.pencairan_proker }}</h4></p>
+                                                </div>
+                                                <div class="tab-pane" id="messages1">
+                                                    <p><h6>{{ tampil.catatan }}</h6></p>
+                                                </div>
+                                                <div class="tab-pane" id="settings1">
+                                                    <p><code><a href="{{tampil.terbitan_sk.url}}"><code>Download terbitan SK</code></a></p>
+                                                </div>
+                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project statustic end -->
+                    </div>
+                </div>
+                <!-- Page-body end -->
+            </div>
+            <div id="styleSelector"> </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,89 @@
+{% extends "data/BEM/base_BEM.html" %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="pcoded-content">
+    <!-- Page-header start -->
+    <div class="page-header">
+        <div class="page-block">
+        </div>
+    </div>
+    <!-- Page-header end -->
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <!-- Project statustic start -->
+                        <div class="col-xl-12">
+                            <div class="card proj-progress-card">
+                                <div class="">
+                                    <div class="">
+                                        <!-- Page-body start -->
+                                        <div class="page-body">
+                                            <!-- Basic table card start -->
+                                            <div class="card">
+                                                <div class="card-block table-border-style">
+                                                    <form method="get">
+                                                        <div class="row">
+                                                            <a role="button" href="{% url 'inputadminbem' %}" style="margin-left: 2pc;" type="button" class="btn btn-success waves-effect" data-toggle="tooltip" data-placement="right" title="tambah data proposal">
+                                                                Tambah User BEM
+                                                            </a><a role="button" href="{% url 'userbem' %}" style="margin-left: 2pc;" type="button" class="btn btn-danger waves-effect" data-toggle="tooltip" data-placement="right" title="hapus">
+                                                                Hapus User BEM
+                                                            </a>
+                                                        </div>
+                                                        <br>
+                                                    </form>
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr class="bg-primary" style="text-align: center;">
+                                                                    <th scope="col">No</th>
+                                                                    <th scope="col">Jenis BEM</th>
+                                                                    <th scope="col">Email</th>
+                                                                    <th scope="col">No rekening</th>
+                                                                    <th scope="col">Username</th>
+                                                                    <th scope="col">Nama Anggota</th>
+                                                                    <th scope="col">No Telepon</th>
+                                                                    <th scope="col">Foto profil</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {% for r in bem %}
+                                                                    <tr style="text-align: center;">
+                                                                        <td>{{ forloop.counter }}</td>
+                                                                        <td>{{ r.jenis_bem }}</td>
+                                                                        <td>{{ r.Email }}</td>
+                                                                        <td>{{ r.no_rekening }}</td>
+                                                                        <td>{{ r.user }}</td>
+                                                                        <td>{{ r.nama_anggota }}</td>
+                                                                        <td>{{ r.telp_anggota }}</td>
+                                                                        <td><p><img class="img-50" src="{{r.foto_profil.url}}" alt=""></p></td>
+                                                                    </tr>
+                                                                {% endfor %}  
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                            </div>
+                                            <!-- Background Utilities table end -->
+                                        </div>
+                                        <!-- Page-body end -->
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project statustic end -->
+                    </div>
+                </div>
+                <!-- Page-body end -->
+            </div>
+            <div id="styleSelector"> </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

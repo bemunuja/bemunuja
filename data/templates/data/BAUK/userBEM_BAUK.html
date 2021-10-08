@@ -1,0 +1,71 @@
+{% extends "data/BAUK/base_BAUK.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="pcoded-content">
+    <!-- Page-header start -->
+    <div class="page-header">
+        <div class="page-block">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="page-header-title">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index.html"> <i class="fa fa-home"></i> </a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="#!">Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page-header end -->
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="card">
+                        <div class="card-block table-border-style">
+                            <div class="table-responsive">
+                                <a role="button" href="{% url 'formadminbem' %}" style="margin-left: 2pc;" type="button" class="btn btn-primary waves-effect" data-toggle="tooltip" data-placement="right" title="tambah data proposal">
+                                    <<
+                                </a>
+                                <br>
+                                <br>
+                                <table class="table">
+                                    <thead>
+                                        <tr class="bg-primary" style="text-align: center;">
+                                            <th><p>No</p></th>
+                                            <th><p>nama User</p></th>
+                                            <th><p>hapus</p></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for data in userbem %}
+                                        <tr style="text-align: center;">
+                                            <th><p>{{forloop.counter}}</p></th>
+                                            <td><p>{{data.username}}</p></td>
+                                            <td>
+                                                <a class="btn btn-danger" href="{% url 'hapususer_bauk' data.id %}" role="button" title="hapus data proposal">Hapus</a>
+                                            </td>                                                                  
+                                        </tr>
+                                        {% endfor %}  
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Page-body end -->
+            </div>
+            <div id="styleSelector"> </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

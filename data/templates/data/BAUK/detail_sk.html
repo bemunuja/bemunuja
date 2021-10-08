@@ -1,0 +1,155 @@
+{% extends "data/BAUK/base_BAUK.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="pcoded-content">
+    <!-- Page-header start -->
+    <div class="page-header">
+        <div class="page-block">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index.html"> <i class="fa fa-home"></i> </a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="#!">Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page-header end -->
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <!-- Project statustic start -->
+                        <div class="col-xl-11">
+                            <div class="card proj-progress-card">
+                                <div class="card-block">
+                                    <div class="">
+                                        <h4 style="text-align: center;">
+                                            <a href="{{tampil.id_Adminbem.foto_profil.url}}"><img src="{{tampil.id_Adminbem.foto_profil.url}}" style="width: 100px;"></a>
+                                        </h4>
+                                        <h4 style="text-align: center;">
+                                            Data pengajuan SK {{ tampil.id_Adminbem }}
+                                        </h4>
+                                        <br>
+                                        <table class="table">
+                                            <head>
+                                                <tr>
+                                                    <th><h6>Surat permohonan</h6></th>
+                                                    <th>: <a href="{{tampil.surat_permohonansk.url}}"><code>lihat dokumen</code></a></th>
+                                                </tr>
+                                                <tr>
+                                                    <th><h6>struktur anggota</h6></th>
+                                                    <th>: <a href="{{tampil.struktur_anggota.url}}"><code>lihat dokumen</code></a></th>
+                                                </tr>
+                                                <tr>
+                                                    <th><h6>Visi misi</h6></th>
+                                                    <th>: {{ tampil.visi_misi|safe }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <th><h6>Program kerja</h6></th>
+                                                    <th>: <a href="{{ tampil.program_kerja.url }}"><code>lihat dokumen</code></a></th>
+                                                </tr>
+                                                <tr>
+                                                    <th><h6>Rencana anggaran belanja</h6></th>
+                                                    <th>: <a href="{{ tampil.rab.url }}"><code>lihat dokumen</code></a></th>
+                                                </tr>
+                                                <tr>
+                                                    <th><h6>Jumlah total RAB</h6></th>
+                                                    <th>: {{ tampil.total_rab }}</th>
+                                                </tr>
+                                            </head>
+                                        </table>
+                                        <br>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-12">
+                            <div class="card mat-stat-card">
+                                <div class="card-block">
+                                    <div class="row align-items-center b-b-default">
+                                        <div class="col-sm-6 b-r-default p-b-20 p-t-20">
+                                            <div class="row align-items-center text-center">
+                                                <div class="col-4 p-r-0">
+                                                    <i class="far fa-user text-c-purple f-24"></i>
+                                                </div>
+                                                <div class="col-8 p-l-0">
+                                                    <h5>User</h5>
+                                                    <p class="text-muted m-b-0" style="font-size: 12px;">{{ tampil.id_Adminbem }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 p-b-20 p-t-20">
+                                            <div class="row align-items-center text-center">
+                                                <div class="col-4 p-r-0">
+                                                    <i class="fas fa-volume-down text-c-green f-24"></i>
+                                                </div>
+                                                <div class="col-8 p-l-0">
+                                                    <h5>phone</h5>
+                                                    <p class="text-muted m-b-0" style="font-size: 12px;">{{ tampil.id_Adminbem.telp_anggota }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-6 p-b-20 p-t-20 b-r-default">
+                                            <div class="row align-items-center text-center">
+                                                <div class="col-4 p-r-0">
+                                                    <i class="far fa-file-alt text-c-red f-24"></i>
+                                                </div>
+                                                <div class="col-8 p-l-0">
+                                                    <h5>No Rek</h5>
+                                                    <p class="text-muted m-b-0" style="font-size: 12px;">{{ tampil.id_Adminbem.no_rekening }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 p-b-20 p-t-20">
+                                            <div class="row align-items-center text-center">
+                                                <div class="col-4 p-r-0">
+                                                    <i class="far fa-envelope-open text-c-blue f-24"></i>
+                                                </div>
+                                                <div class="col-8 p-l-0">
+                                                    <h5>Mails</h5>
+                                                    <p class="text-muted m-b-0" style="font-size: 12px;">{{ tampil.id_Adminbem.Email }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-7">
+                            <div class="card proj-progress-card">
+                                <div class="card-block">
+                                    <div class="">
+                                        <h4 style="text-align: center;">Form tanggapan SK {{tampil.id_Adminbem}} </h4>
+                                        <br>
+                                        <form action="" method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            {{pr.as_p}}
+                                            {{pr.media}}
+                                            <button class="btn btn-success waves-effect" type="submit">Simpan</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project statustic end -->
+                    </div>
+                </div>
+                <!-- Page-body end -->
+            </div>
+            <div id="styleSelector"> </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

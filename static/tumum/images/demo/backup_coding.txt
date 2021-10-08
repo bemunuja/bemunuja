@@ -1,0 +1,23 @@
+path('profile/', profile_page, name='profile'),
+    path('contact/', contact_page, name='contact'),
+
+
+
+
+def home_page(request):
+    return HttpResponse("hoooome")
+
+def profile_page(request):
+    return HttpResponse("<h1>Halaman profile</h1>")
+
+def contact_page(request):
+    return HttpResponse("<h1>Halaman contact</h1>")
+
+def data_page(request):
+    return HttpResponse("<h1>data</h1>")
+
+def products_page(request):
+    return HttpResponse("<h1>produk</h1>")
+
+def custumer_page(request):
+    return HttpResponse("<h1>Halaman contact</h1>")

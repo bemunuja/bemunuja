@@ -1,0 +1,43 @@
+{% extends "data/admin/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="pcoded-content">
+    <!-- Page-header start -->
+    <div class="page-header">
+        <div class="page-block">
+            <div class="row align-items-center">
+            </div>
+        </div>
+    </div>
+    <!-- Page-header end -->
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <!-- Project statustic start -->
+                        <div class="col-xl-11">
+                            <div class="card proj-progress-card">
+                                <div class="card-block">
+                                    <div class="">
+                                        <form action="" method="POST">
+                                            {% csrf_token %}
+                                            {{pr.as_p}}
+                                            <button type="submit" class="btn btn-success waves-effect waves-light m-r-20" data-toggle="tooltip" data-placement="right" title="simpan data proposal baru">
+                                                simpan
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project statustic end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

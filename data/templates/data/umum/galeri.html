@@ -1,0 +1,35 @@
+{% extends "data/umum/main.html" %}
+{% load static %}
+{% block content %}
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <div class="content"> 
+      <div id="gallery">
+        <figure>
+          <header class="heading">Gallery BEM</header>
+          {% for data in venues %}
+          <li class="one_third">
+            <article><a href="{{data.img.url}}"><img src="{{data.img.url}}" alt="" style="width: 350px; height: 300px;"></a></a>
+            </article>
+          </li>
+          {% endfor %}
+        </figure>
+      </div>
+    </div>
+    <nav class="pagination">
+      <ul>
+        {% if venues.has_previous %}
+          <li><a class="btn btn inverse" href="?page={{ venues.previous_page_number }}">&laquo; kembali</a></li>
+          <li><strong>&hellip;</strong></li>
+        {% endif %}
+        <li class="current"><strong>{{ venues.number }}</strong></li>
+        {% if venues.has_next %}
+          <li><strong>&hellip;</strong></li>
+          <li><a class="btn btn inverse" href="?page={{ venues.next_page_number }}">selanjutnya &raquo;</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </main>
+</div>
+{% endblock content %}

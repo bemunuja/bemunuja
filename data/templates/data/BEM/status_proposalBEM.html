@@ -1,0 +1,65 @@
+{% extends "data/BEM/base_BEM.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="pcoded-content">
+    <!-- Page-header start -->
+    <div class="page-header">
+        <div class="page-block">
+            <div class="row align-items-center">
+            </div>
+        </div>
+    </div>
+    <!-- Page-header end -->
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Status pengajuan Proposal</h4>
+                                    <span>proposal {{pr.relasiproker}}, unggahan "{{pr.pengunggah}}" dari {{pr.bem}}</span>
+                                    <div class="card-header-right">
+                                        <ul class="list-unstyled card-option">
+                                            <li>
+                                                <i class="fa fa fa-wrench open-card-option"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-window-maximize full-card"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-minus minimize-card"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-refresh reload-card"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-trash close-card"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card-block">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <h4>
+                                        STATUS : {{pr.notifikasi}}
+                                    </h4>
+                                    <h4>
+                                        catatan : 
+                                    </h4>
+                                    <p>"{{pr.catatan}}"</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

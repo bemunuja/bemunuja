@@ -1,0 +1,116 @@
+{% extends "data/admin/base.html" %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="pcoded-content">
+    <!-- Page-header start -->
+    <div class="page-header">
+        <div class="page-block">
+        </div>
+    </div>
+    <!-- Page-header end -->
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <!-- Project statustic start -->
+                        <div class="col-xl-12">
+                            <div class="card proj-progress-card">
+                                <div class="">
+                                    <div class="">
+                                        <!-- Page-body start -->
+                                        <div class="page-body">
+                                            <!-- Basic table card start -->
+                                            <div class="card">
+                                                <div class="card-block table-border-style">
+                                                    <form method="get">
+                                                        <div class="row">
+                                                            <div style="margin-left: 15px;">{{ filter_berkas.form.pengunggah| add_class:"form-control" }}</div>
+                                                            <button class="btn btn-primary" type="submit" style="margin-left: 9px;">search</button>
+                                                            <a role="button" href="{% url 'tambah_proposal' %}" style="margin-left: 2pc;" type="button" class="btn btn-success waves-effect" data-toggle="tooltip" data-placement="right" title="tambah data proposal">
+                                                                Tambah Data
+                                                            </a>
+                                                            <a role="button" href="{% url 'cetakproposal' %}" style="margin-left: 2pc;" type="button" class="btn waves-effect waves-light btn-inverse btn-outline-inverse" data-toggle="tooltip" data-placement="right" title="cetak ke bentuk exel">
+                                                                cetak
+                                                            </a>
+                                                        </div>
+                                                        <br>
+                                                    </form>
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr class="bg-primary" style="text-align: center;">
+                                                                    <th><p>No</p></th>
+                                                                    <th><p>Pengunggah</p></th>
+                                                                    <th><p>bem</p></th>
+                                                                    <th><p>Program kerja</p></th>
+                                                                    <th><p>waktu</p></th>
+                                                                    <th><p>berkas</p></th>
+                                                                    <th><p>acara</p></th>
+                                                                    <th><p>komunikasi</p></th>
+                                                                    <th><p>perlengkapan</p></th>
+                                                                    <th><p>edit</p></th>
+                                                                    <th><p>hapus</p></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {% for data in berkas %}
+                                                                <tr style="text-align: center;">
+                                                                    <th><p>{{forloop.counter}}</p></th>
+                                                                    <td><p>{{data.pengunggah}}</p></td>
+                                                                    <td><p>{{data.bem}}</p></td>
+                                                                    <td><p>{{data.relasiproker}}</p></td>
+                                                                    <td><p>{{data.date_created}}</p></td>
+                                                                    <td><a href="{{data.file.url}}" title="lihat berkas proposal"><code>{{data.file}}</code></a></td>
+                                                                    <td><p>Rp.{{data.acara}}</p></td>
+                                                                    <td><p>Rp.{{data.konsumsi}}</p></td>
+                                                                    <td><p>Rp.{{data.perlengkapan}}</p></td>
+                                                                    <td>
+                                                                        <a class="btn btn-warning" href="{% url 'update_proposal' data.id %}" role="button" title="hapus data proposal">Edit</a>
+                                                                    </td> 
+                                                                    <td>
+                                                                        <a class="btn btn-danger" href="{% url 'delete_proposal' data.id %}" role="button" title="hapus data proposal">Hapus</a>
+                                                                    </td>                                                                  
+                                                                </tr>
+                                                                {% endfor %}  
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Basic table card end -->
+                                            <!-- Inverse table card start -->
+                                            
+                                            <!-- Inverse table card end -->
+                                            <!-- Hover table card start -->
+                                            
+                                            <!-- Hover table card end -->
+                                            <!-- Contextual classes table starts -->
+                                            
+                                            <!-- Contextual classes table ends -->
+                                            <!-- Background Utilities table start -->
+                                            <div class="card">
+                                                
+                                                
+                                            </div>
+                                            <!-- Background Utilities table end -->
+                                        </div>
+                                        <!-- Page-body end -->
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project statustic end -->
+                    </div>
+                </div>
+                <!-- Page-body end -->
+            </div>
+            <div id="styleSelector"> </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,146 @@
+{% extends "data/BAUK/base_BAUK.html" %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="pcoded-content">
+    <!-- Page-header start -->
+    <div class="page-header">
+        <div class="page-block">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                </div>
+                <div class="col-md-4">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">
+
+                        </li>
+                        
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page-header end -->
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="row">
+                        <!-- Project statustic start -->
+                        <div class="col-xl-12">
+                            <div class="card proj-progress-card">
+                                <div class="">
+                                    <div class="">
+                                        <!-- Page-body start -->
+                                        <div class="page-body">
+                                            <!-- Tooltips on textbox card start -->
+                                            <!-- <div class="card o-visible">
+                                                <div class="card-header">
+                                                    <h4>Pengajuan Proposal</h4>
+                                                    <div class="card-header-right">
+                                                        <br>
+                                                        <button type="button" class="btn btn-success waves-effect waves-light m-r-20" data-toggle="tooltip" data-placement="right" title="tambah data proposal">
+                                                            <a href="{% url 'tambah_proposal' %}" style="color: aliceblue;">Tambah Data</a>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="card-block tooltip-icon button-list">
+                                                </div>
+                                            </div> -->
+                                            <!-- Tooltips on textbox card end -->
+                                        </div>
+                                        <div class="page-body">
+                                            <!-- Basic table card start -->
+                                            <div class="card">
+                                                <div class="card-block table-border-style">
+                                                    <form method="get">
+                                                        <div class="row">
+                                                            <div style="margin-left: 15px;">{{ filter_berkas.form.pengunggah| add_class:"form-control" }}</div>
+                                                            <button class="btn btn-primary" type="submit" style="margin-left: 9px;">search</button>
+                                                            <a role="button" href="{% url 'cetakproposal' %}" style="margin-left: 2pc;" type="button" class="btn waves-effect waves-light btn-inverse btn-outline-inverse" data-toggle="tooltip" data-placement="right" title="cetak ke bentuk exel">
+                                                                cetak
+                                                            </a>
+                                                        </div>
+                                                        <br>
+                                                    </form>
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr class="bg-primary" style="text-align: center;">
+                                                                    <th><p>No</p></th>
+                                                                    <th><p>Pengunggah</p></th>
+                                                                    <th><p>Bem</p></th>
+                                                                    <th><p>Program kerja</p></th>
+                                                                    <th><p>waktu</p></th>
+                                                                    <th><p>berkas</p></th>
+                                                                    <th><p>acara</p></th>
+                                                                    <th><p>komunikasi</p></th>
+                                                                    <th><p>perlengkapan</p></th>
+                                                                    <th><p>status</p></th>
+                                                                    <th><p>tanggapan</p></th>
+                                                                    <th><p>Hapus</p></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {% for data in berkas %}
+                                                                <tr style="text-align: center;">
+                                                                    <th><p>{{forloop.counter}}</p></th>
+                                                                    <td><p>{{data.pengunggah}}</p></td>
+                                                                    <td><p>{{data.bem}}</p></td>
+                                                                    <td><p>{{data.relasiproker}}</p></td>
+                                                                    <td><p>{{data.date_created}}</p></td>
+                                                                    <td><a href="{{data.file.url}}" title="lihat berkas proposal"><code>{{data.file}}</code></a></td>
+                                                                    <td><p>Rp.{{data.acara}}</p></td>
+                                                                    <td><p>Rp.{{data.konsumsi}}</p></td>
+                                                                    <td><p>Rp.{{data.konsumsi}}</p></td>
+                                                                    <td><p>{{data.notifikasi}}</p></td>
+                                                                    <td>
+                                                                        <a class="btn btn-success waves-effect" href="{% url 'tanggapanproposal_bauk' data.id %}" role="button" title="berikan tanggapan anda">tanggapi</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a class="btn btn-danger waves-effect" href="{% url 'hapusproposal_bauk' data.id %}" role="button" title="hapis data proposal yang diunggah">Hapus</a>
+                                                                    </td> 
+                                                                                                                                    
+                                                                </tr>
+                                                                {% endfor %}  
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Basic table card end -->
+                                            <!-- Inverse table card start -->
+                                            
+                                            <!-- Inverse table card end -->
+                                            <!-- Hover table card start -->
+                                            
+                                            <!-- Hover table card end -->
+                                            <!-- Contextual classes table starts -->
+                                            
+                                            <!-- Contextual classes table ends -->
+                                            <!-- Background Utilities table start -->
+                                            <div class="card">
+                                                
+                                                
+                                            </div>
+                                            <!-- Background Utilities table end -->
+                                        </div>
+                                        <!-- Page-body end -->
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project statustic end -->
+                    </div>
+                </div>
+                <!-- Page-body end -->
+            </div>
+            <div id="styleSelector"> </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

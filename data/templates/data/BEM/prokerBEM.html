@@ -1,0 +1,72 @@
+{% extends "data/BEM/base_BEM.html" %}
+{% load widget_tweaks %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="pcoded-content">
+    <!-- Page-header start -->
+    <div class="page-header">
+        <div class="page-block">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <ul class="breadcrumb">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page-header end -->
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="card">
+                        <div class="card-block table-border-style">
+                            <form method="get">
+                                <div class="row">
+                                    <div style="margin-left: 15px;">{{ filter_proker.form.id_Adminbem| add_class:"form-control" }}</div>
+                                    <button class="btn btn-primary" type="submit" style="margin-left: 9px;">search</button>
+                                    <a role="button" href="{% url 'proker' %}" style="margin-left: 2pc;" type="button" class="btn btn-success waves-effect" data-toggle="tooltip" data-placement="right" title="tambah pengajuan proker">
+                                        Ajukan kegiatan
+                                    </a>
+                                </div>
+                                <br>
+                            </form>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr class="bg-primary" style="text-align: center;">
+                                            <th><p>NO</p></th>
+                                            <th><p>BEM</p></th>
+                                            <th><p>KEGIATAN</p></th>
+                                            <th><p>KETERANGAN</p></th>
+                                            <th><p>STATUS</p></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for data in proker %}
+                                        <tr style="text-align: center;">
+                                            <th><p>{{forloop.counter}}</p></th>
+                                            <td><p>{{data.id_Adminbem.jenis_bem}}</p></td>
+                                            <td><p>{{data.nama_kegiatan}}</p></td>
+                                            <td><h6>{{data.tanggapan_proker}}</h6></td>
+                                            <td>
+                                                <a class="btn btn-info waves-effect waves-light" href="{% url 'status_proker' data.id %}" role="button" title="Cek status pengajuan Proker ">Cek status</a>
+                                            </td>                                                                
+                                        </tr>
+                                        {% endfor %}  
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Page-body end -->
+            </div>
+            <div id="styleSelector"> </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
